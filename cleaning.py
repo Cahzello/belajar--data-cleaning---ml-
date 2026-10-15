@@ -46,10 +46,9 @@ test_encoded = pd.get_dummies(test_df, columns=categorical_features, drop_first=
 
 train_encoded, test_encoded = train_encoded.align(test_encoded, join='left', axis=1, fill_value=0)
 
-print("Data berhasil dibersihkan dan diproses secara manual tanpa Scikit-Learn!")
 print("Jumlah baris sebelum hapus outlier:", len(df))
 print("Jumlah baris setelah hapus outlier:", len(train_encoded) + len(test_encoded))
 print("Ukuran data train:", train_encoded.shape)
 print("Ukuran data test:", test_encoded.shape)
-print("\nContoh data train yang sudah diproses:")
+print("\n5 data setelah diproses:")
 print(train_encoded.head())
