@@ -58,3 +58,8 @@ print(train_encoded.head())
 train_encoded.to_csv('./result/training.csv', index=False)
 test_encoded.to_csv('./result/testing.csv', index=False)
 
+# --- Save targets (y) aligned with cleaned train/test ---
+train_y.to_csv('./result/train_y.csv', index=False)
+test_y.to_csv('./result/test_y.csv', index=False)
+print("Saved targets: result/train_y.csv, result/test_y.csv")
+
