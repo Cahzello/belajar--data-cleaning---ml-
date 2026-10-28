@@ -13,7 +13,7 @@ df = df.drop(columns=["Customer ID", "Customer Name", "Purchase Date"])
 X = df.drop(columns=["Churn"])
 y = df["Churn"]
 
-train_df = X.sample(frac=0.8, random_state=42).copy()
+train_df = X.sample(frac=0.7, random_state=42).copy()
 test_df = X.drop(train_df.index).copy()
 
 train_y = y.loc[train_df.index]
