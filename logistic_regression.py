@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
     accuracy_score,
@@ -66,13 +65,3 @@ print(f'Recall   : {recall_score(y_test, y_pred):.4f}')
 print(f'F1-Score : {f1_score(y_test, y_pred):.4f}')
 print(f'ROC-AUC  : {roc_auc_score(y_test, y_proba):.4f}')
 
-# Feature importance (coefficients)
-# coef_df = pd.DataFrame({
-#     'Feature': X_train.columns,
-#     'Coefficient': clf.coef_[0],
-#     'Abs_Coefficient': np.abs(clf.coef_[0])
-# }).sort_values(by='Abs_Coefficient', ascending=False)
-
-# print('\n=== Feature Importance (Top 15 by |Coefficient|) ===')
-# print(coef_df.head(15).to_string(index=False))
-# print(f'\nIntercept: {clf.intercept_[0]:.6f}')
