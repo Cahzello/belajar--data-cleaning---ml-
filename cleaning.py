@@ -48,7 +48,13 @@ train_encoded, test_encoded = train_encoded.align(test_encoded, join='left', axi
 
 print("Jumlah baris sebelum hapus outlier:", len(df))
 print("Jumlah baris setelah hapus outlier:", len(train_encoded) + len(test_encoded))
+print("Jumlah baris data training:", len(train_encoded))
+print("Jumlah baris data uji:", len(test_encoded))
 print("Ukuran data train:", train_encoded.shape)
 print("Ukuran data test:", test_encoded.shape)
 print("\n5 data setelah diproses:")
 print(train_encoded.head())
+
+train_encoded.to_csv('./result/training.csv', index=False)
+test_encoded.to_csv('./result/testing.csv', index=False)
+
