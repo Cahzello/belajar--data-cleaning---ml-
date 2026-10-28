@@ -33,26 +33,26 @@ X_test = X_test.astype(float)
 y_train = y_train.astype(int)
 y_test = y_test.astype(int)
 
-print('=== Data Shape ===')
+print('Dataset: ')
 print('X_train:', X_train.shape, '| y_train:', y_train.shape)
 print('X_test:', X_test.shape, '| y_test:', y_test.shape)
-print('\n=== Class Distribution ===')
+print('\nClass Distribution:')
 print('y_train:\n', y_train.value_counts(normalize=True))
 print('y_test:\n', y_test.value_counts(normalize=True))
 
-clf = LogisticRegression(max_iter=1000, solver='lbfgs', random_state=42, class_weight="balanced")
+clf = LogisticRegression(max_iter=1000, random_state=42, class_weight="balanced")
 clf.fit(X_train, y_train)
 
 y_pred = clf.predict(X_test)
 y_proba = clf.predict_proba(X_test)[:, 1]
 
-print('\n=== Confusion Matrix ===')
+print('\nConfusion Matrix:')
 print(confusion_matrix(y_test, y_pred))
 
-print('\n=== Classification Report ===')
+print('\nClassification Report:')
 print(classification_report(y_test, y_pred))
 
-print('=== Metrics ===')
+print('Evaluasi')
 print(f'Accuracy : {accuracy_score(y_test, y_pred):.4f}')
 print(f'Precision: {precision_score(y_test, y_pred):.4f}')
 print(f'Recall   : {recall_score(y_test, y_pred):.4f}')
