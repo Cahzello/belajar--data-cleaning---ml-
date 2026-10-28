@@ -9,7 +9,6 @@ from sklearn.metrics import (
     f1_score,
     confusion_matrix,
     classification_report,
-    roc_auc_score,
 )
 
 X_train = pd.read_csv('./result/training.csv')
